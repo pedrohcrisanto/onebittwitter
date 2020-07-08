@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :tweet do
-    body { "MyText" }
-    user { nil }
-    tweet_original_id { 1 }
+    body { FFaker::Lorem.phrase }
+    user
+    tweet_original nil
   end
 end
