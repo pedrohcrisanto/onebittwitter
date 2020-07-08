@@ -39,6 +39,14 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
+
+  # Custom json helpers
+  config.include Requests::JsonHelpers, type: :request
+  # Custom Header helpers
+  config.include Requests::HeaderHelpers, type: :request
+  # Custom Serializer helpers
+  config.include Requests::SerializerHelpers, type: :request
+
   config.use_transactional_fixtures = true
   Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
   # RSpec Rails can automatically mix in different behaviours to your tests
